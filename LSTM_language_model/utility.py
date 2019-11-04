@@ -1,11 +1,5 @@
 import numpy as np
 
-def state2word(sentences, word_list):
-    return tuple(tuple(word_list[idx] for idx in snt) for snt in sentences)
-
-def sentences2strings(sentences, sep=","):
-    return [sep.join(snt) for snt in sentences]
-
 def onehot(label_matrix, depth=None):
     shape = label_matrix.shape
     if depth is None:

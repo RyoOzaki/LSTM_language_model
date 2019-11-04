@@ -11,8 +11,6 @@ class LSTM_language_model(object):
     __MASKING_VALUE = -1
 
     def __init__(self, input_dim, hidden_dim, BOS_index=0, EOS_index=-1, load_model_path=None):
-        assert input_dim > 0, "input_dim must be bigger than 0"
-        assert hidden_dim > 0, "hidden_dim must be bigger than 0"
 
         self.__input_dim = input_dim
         self.__hidden_dim = hidden_dim
@@ -68,9 +66,7 @@ class LSTM_language_model(object):
             input_matrix = np.concatenate((unfinished_input, np.zeros((unfinished_size, 1, self.__input_dim), dtype=np.float32)), axis=1)
             for i, idx in enumerate(sampled_v[unfinished_flag]):
                 input_matrix[i, -1, idx] = 1
-        for n in range(size):
-            generated_states[n] = tuple(generated_states[n])
-        return tuple(generated_states)
+        return generated_states
 
     def save_model(self, path, **kwargs):
         self.__model.save(path, **kwargs)
