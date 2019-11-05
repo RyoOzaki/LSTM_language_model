@@ -25,7 +25,9 @@ BOS_index = 0
 EOS_index = D-1
 
 lstmlm = LSTM_language_model(D, None, BOS_index=BOS_index, EOS_index=EOS_index, load_model_path=args.model)
+
 sentences = lstmlm.generate(size=args.size)
+
 if args.without_BOS:
     sentences = [snt[1:] for snt in sentences]
 if args.without_EOS:

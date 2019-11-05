@@ -8,16 +8,16 @@ EOS = "<EOS>"
 
 parser = ArgumentParser()
 
-parser.add_argument("--source", type=Path, required=True)
-parser.add_argument("--output", type=Path)
-parser.add_argument("--repeat", type=int, default=1)
-parser.add_argument("--separator", default=" ")
-parser.add_argument("--mask_value", type=int, default=-1)
+parser.add_argument("--source", type=Path, required=True, help="source file (txt)")
+parser.add_argument("--output", type=Path, help="if --output option is not specified, --output will parse as --source.with_suffix('.npz')")
+parser.add_argument("--repeat", type=int, default=1, help="repeat time")
+parser.add_argument("--separator", default=" ", help="separator of words")
+parser.add_argument("--mask_value", type=int, default=-1, help="value of masking, it will use in fill up the short length sentence")
 
-parser.add_argument("--format", default="word", choices=["word", "state"])
+parser.add_argument("--format", default="word", choices=["word", "state"], help="format of source file, --format option will specify 'word' or 'state'")
 parser.add_argument("--comment_header", default="#")
-parser.add_argument("--BOS", default=BOS)
-parser.add_argument("--EOS", default=EOS)
+parser.add_argument("--BOS", default=BOS, help="string of BOS flag")
+parser.add_argument("--EOS", default=EOS, help="string of EOS flag")
 
 args = parser.parse_args()
 
