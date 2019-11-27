@@ -2,8 +2,8 @@
 
 ## extract
 ```
-python extract.py --source weathernews.txt --format word --repeat 2
-python extract.py --source weathernews_state.txt --format state --repeat 2 --output weathernews.npz
+python LSTM_convert.py --source weathernews.txt --format word --repeat 2
+python LSTM_convert.py --source weathernews_state.txt --format state --repeat 2 --output weathernews.npz
 ```
 
 ## training
