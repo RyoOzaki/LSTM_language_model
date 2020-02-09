@@ -1,10 +1,10 @@
 import numpy as np
-from keras.models import load_model
-from keras.models import Sequential
-from keras.layers import Dense, Masking
-from keras.layers.recurrent import LSTM
-from keras.layers.wrappers import TimeDistributed
-from keras.optimizers import Adam
+from tensorflow.keras.models import load_model
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Masking
+from tensorflow.keras.layers import LSTM
+from tensorflow.keras.layers import TimeDistributed
+from tensorflow.keras.optimizers import Adam
 
 class LSTM_language_model(object):
 
