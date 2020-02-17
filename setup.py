@@ -15,6 +15,6 @@ setup(
     author_email='ryo.ozaki@em.ci.ritsumei.ac.jp',
     url='https://github.com/RyoOzaki/LSTM_language_model',
     license=license,
-    install_requires=['numpy', 'tensorflow', 'keras'],
+    install_requires=['numpy', 'tensorflow<=1.15.2', 'keras'],
     packages=['LSTM_language_model',]
 )
